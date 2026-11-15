@@ -7,7 +7,7 @@ medcastglobal/
 ├── frontend/           # Mevcut statik web arayüzü
 │   ├── index.html      # Sayfa yapısı
 │   ├── data.js         # Eğitimler, içerikler ve eğitmenler
-│   ├── app.js          # Ana sayfa etkileşimleri ve sürüm seçimi
+│   ├── app.js          # Ana sayfa etkileşimleri
 │   ├── alternative.js  # Üçüncü sürümün bileşenleri
 │   ├── styles.css      # İlk iki sürümün yerleşimi
 │   ├── theme.css       # İlk iki sürümün renk paletleri
@@ -23,7 +23,7 @@ medcastglobal/
 
 ## İçerik ve tasarım
 
-Eğitimleri, içerik kartlarını, eğitmenleri ve kart görsellerini `frontend/data.js` dosyasından düzenleyebilirsiniz. İlk iki sürümün renkleri `frontend/theme.css`, üçüncü sürümün renkleri ise `frontend/alternative.css` dosyasının başındadır. Sağ alt köşedeki geçici kontrol ile üç sürüm arasında geçiş yapılabilir; sayfa yenilendiğinde üçüncü sürüm açılır.
+Eğitimleri, içerik kartlarını, eğitmenleri ve kart görsellerini `frontend/data.js` dosyasından düzenleyebilirsiniz. Ana sayfanın renkleri `frontend/alternative.css` dosyasının başındadır.
 
 Tasarım referansındaki tarihler ve isimler örnek olarak korunmuştur. Giriş, üyelik ve içerik bağlantıları gerçek servislerle bağlanmaya hazır görsel yer tutuculardır.
 

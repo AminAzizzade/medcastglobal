@@ -26,20 +26,3 @@ document.querySelector('.search-toggle').addEventListener('click', () => { dialo
 document.querySelector('#site-search').addEventListener('input', event => { const value = event.target.value.trim().toLocaleLowerCase('tr'); const matches = value ? siteData.courses.filter(course => course.title.toLocaleLowerCase('tr').includes(value)) : []; document.querySelector('.search-results').innerHTML = matches.map(course => `<a href="#egitimler">${course.title} <span>→</span></a>`).join('') || (value ? '<p>Bu aramayla eşleşen eğitim bulunamadı.</p>' : ''); });
 document.querySelector('.search-results').addEventListener('click', event => { if (event.target.closest('a')) dialog.close(); });
 
-// Geçici karşılaştırma: Sayfa yenilendiğinde Versiyon 3 açılır.
-const versionButtons = document.querySelectorAll('[data-version-direction]');
-const versionLabel = document.querySelector('#version-label');
-let activeVersion = 3;
-function updateVersion() {
-  document.documentElement.dataset.theme = `v${activeVersion}`;
-  versionLabel.textContent = `Versiyon ${activeVersion} / 3`;
-  versionButtons.forEach(button => {
-    const direction = Number(button.dataset.versionDirection);
-    button.disabled = activeVersion + direction < 1 || activeVersion + direction > 3;
-  });
-}
-versionButtons.forEach(button => button.addEventListener('click', () => {
-  activeVersion += Number(button.dataset.versionDirection);
-  updateVersion();
-}));
-updateVersion();
