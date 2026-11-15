@@ -1,29 +1,32 @@
-# Medcast Global ana sayfa
+# Medcast Global
 
-Bu proje herhangi bir paket kurulumu gerektirmeyen, modüler bir statik ana sayfadır.
+Proje, kullanıcı arayüzü ve gelecekte geliştirilecek sunucu tarafı için iki ana klasöre ayrılmıştır:
 
-## Çalıştırma
+```text
+medcastglobal/
+├── frontend/           # Mevcut statik web arayüzü
+│   ├── index.html      # Sayfa yapısı
+│   ├── data.js         # Eğitimler, içerikler ve eğitmenler
+│   ├── app.js          # Ana sayfa etkileşimleri ve sürüm seçimi
+│   ├── alternative.js  # Üçüncü sürümün bileşenleri
+│   ├── styles.css      # İlk iki sürümün yerleşimi
+│   ├── theme.css       # İlk iki sürümün renk paletleri
+│   ├── alternative.css # Üçüncü sürümün tasarımı
+│   └── assets/         # Görseller
+├── backend/            # Gelecekteki sunucu uygulaması için ayrılmış alan
+└── index.html          # Kök adresten frontend'e yönlendirme
+```
 
-Klasörde `python -m http.server 8000` komutunu çalıştırın ve `http://localhost:8000` adresini açın.
+## Frontend'i çalıştırma
 
-## Düzenleme
+`frontend/index.html` dosyasını tarayıcıda açın. Kök klasördeki `index.html` dosyası da aynı sayfaya yönlendirir. Paket kurulumu gerekmez; isterseniz VS Code'da bir yerel sunucu eklentisiyle de açabilirsiniz.
 
-- `data.js`: eğitimler, etkinlikler, eğitmenler ve özellikler.
-- `styles.css`: ilk iki sürümün tipografi, yerleşim ve duyarlı ekran kuralları.
-- `theme.css`: ilk iki sürümün renk paletleri.
-- `alternative.css` ve `alternative.js`: üçüncü sürümün tasarımı ve içerik bileşenleri.
-- `index.html`: sayfa bölümleri ve sabit metinler.
-- `app.js`: tekrar eden içeriklerin oluşturulması, menü, arama ve eğitim kaydırıcısı.
-- `assets/`: görseller. Eğitim görseli beş eşit sütunlu bir görsel şeridi olarak kullanılır.
+## İçerik ve tasarım
+
+Eğitimleri, içerik kartlarını, eğitmenleri ve kart görsellerini `frontend/data.js` dosyasından düzenleyebilirsiniz. İlk iki sürümün renkleri `frontend/theme.css`, üçüncü sürümün renkleri ise `frontend/alternative.css` dosyasının başındadır. Sağ alt köşedeki geçici kontrol ile üç sürüm arasında geçiş yapılabilir; sayfa yenilendiğinde üçüncü sürüm açılır.
 
 Tasarım referansındaki tarihler ve isimler örnek olarak korunmuştur. Giriş, üyelik ve içerik bağlantıları gerçek servislerle bağlanmaya hazır görsel yer tutuculardır.
 
-### Renkleri değiştirme
+## Backend
 
-Tüm ana renkler `theme.css` dosyasındaki `:root` değişkenlerinde tanımlıdır. Örneğin buton ve bağlantı rengini değiştirmek için yalnızca `--color-primary` değerini güncelleyin. Hover ve footer yardımcı renkleri ana paletten otomatik türetilir.
-
-### Sürümleri karşılaştırma
-
-Sağ alt köşedeki oklarla üç sürüm arasında geçiş yapabilirsiniz. Bu kontrol geçicidir; sayfa yenilendiğinde Versiyon 3 açılır. Üçüncü sürümün renkleri `alternative.css` dosyasının başındadır. Eğitimler, içerik kartları ve eğitmenler `data.js` dosyasından düzenlenir.
-
-İçerik kartlarının görsellerini değiştirmek için `data.js` içindeki `articles` listesindeki `image` yollarını güncelleyin.
+`backend/` şu anda yalnızca gelecekteki geliştirmeler için ayrılmıştır. Henüz bir API, veritabanı veya kimlik doğrulama sistemi yoktur. Sunucu teknolojisi ve işlevleri belirlendiğinde bu klasörde geliştirilebilir.
