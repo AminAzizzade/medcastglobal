@@ -1,0 +1,29 @@
+/* Renk paleti: Farklı bir tema denemek için yalnızca bu değerleri değiştirin. */
+:root {
+  --color-heading: #142B45;        /* Başlıklar, menü yazıları ve footer */
+  --color-primary: #087F8C;        /* Butonlar, bağlantılar ve aktif alanlar */
+  --color-page: #F5F8FA;           /* Sayfa zemini */
+  --color-surface: #FFFFFF;        /* Kartlar ve menü zemini */
+  --color-text: #475569;           /* Açıklama metinleri */
+  --color-border: #DFE7EC;         /* Çizgiler ve kart kenarları */
+  --color-tag-background: #E4F3F3; /* Etiket zemini */
+
+  /* Ana renklerden türetilen yardımcı renkler. */
+  --color-on-primary: var(--color-surface);
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 85%, var(--color-heading));
+  --color-footer-muted: color-mix(in srgb, var(--color-surface) 70%, var(--color-heading));
+}
+
+/* Versiyon 1: ?nceki lacivert ve alt?n palet. */
+:root[data-theme="v1"] {
+  --color-heading: #121A29;
+  --color-primary: #0C2342;
+  --color-page: #F8F8F6;
+  --color-surface: #FFFFFF;
+  --color-text: #121A29;
+  --color-border: #DEDEDB;
+  --color-tag-background: #E4CBA1;
+  --color-primary-hover: #1E3C60;
+  --color-footer-muted: #BEC9D4;
+  --color-accent: #9A8054;
+}

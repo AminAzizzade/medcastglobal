@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr" data-theme="v3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hekimler için bilimsel ve vaka temelli radyoloji eğitimleri.">
+  <title>Medcast Global | Akademik Radyoloji Eğitimleri</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="alternative.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner shell">
+      <a class="brand" href="#anasayfa" aria-label="Medcast Global ana sayfa"><span class="brand-arc"></span><span class="brand-name">Medcast <strong>Global</strong><sup>®</sup></span><span class="brand-subtitle">ACADEMIC RADIOLOGY EDUCATION</span></a>
+      <button class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="main-nav" aria-label="Ana menü">
+        <a class="active" href="#anasayfa">Ana Sayfa</a><a href="#egitimler">Eğitimler <span>⌄</span></a><a href="#vakalar">Vaka Kütüphanesi</a><a href="#icerikler">Bilimsel İçerikler <span>⌄</span></a><a href="#etkinlikler">Etkinlikler <span>⌄</span></a><a href="#egitmenler">Eğitmenler</a><a href="#hakkimizda">Hakkımızda</a>
+        <button class="search-toggle" aria-label="Ara"><span class="search-icon"></span></button><a class="button button-outline nav-button" href="#iletisim">Giriş Yap</a><a class="button button-primary nav-button" href="#iletisim">Üye Ol</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="anasayfa">
+    <section class="hero">
+      <div class="hero-image" role="img" aria-label="Radyoloji görüntülerini inceleyen hekim"></div>
+      <div class="hero-wash"></div>
+      <div class="hero-content shell"><div class="hero-copy"><p class="eyebrow">BİLGİDEN KLİNİK DENEYİME</p><h1>Radyolojide<br>Sistematik, Bilimsel ve<br>Vaka Temelli Eğitim</h1><p class="hero-description">Hekimler için, temel bilgiden ileri düzeye,<br>kanıta dayalı ve klinik pratiğe odaklı radyoloji eğitimleri.</p><div class="hero-actions"><a class="button button-primary" href="#egitimler">Eğitim Kataloğunu İncele <span>⟶</span></a><a class="button button-outline" href="#hakkimizda"><span class="play-icon">▷</span> Medcast’i Tanıyın</a></div></div></div>
+      <div class="hero-signature"><em>Medcast Global<sup>®</sup></em><span>INTERNATIONAL<br>MEDICAL EDUCATION</span></div>
+    </section>
+
+    <section class="benefits" aria-label="Eğitim özellikleri"><div class="benefit-grid shell" id="benefits"></div></section>
+
+    <section class="courses section-shell" id="egitimler"><div class="section-heading"><div><p class="section-kicker">ÖĞRENMEYE DEVAM EDİN</p><h2>Güncel Eğitimlerimiz</h2></div><a class="text-link" href="#course-list">Tüm Eğitimleri Gör <span>⟶</span></a></div><div class="course-wrap"><button class="slider-arrow previous" aria-label="Önceki eğitimler">←</button><div class="course-grid" id="course-list"></div><button class="slider-arrow next" aria-label="Sonraki eğitimler">→</button></div></section>
+
+    <div class="content-grid section-shell">
+      <section class="feature-card case-card" id="vakalar"><div class="card-heading"><span class="line-icon" data-icon="folder"></span><h2>Vaka Temelli Öğrenme</h2></div><div class="case-copy"><p>Gerçek klinik vakalarla tanısal düşünme, ayırıcı tanı ve raporlama becerilerinizi geliştirin.</p><a class="text-link" href="#iletisim">Vaka Kütüphanesine Git <span>⟶</span></a></div></section>
+      <section class="feature-card events-card" id="etkinlikler"><div class="card-heading"><span class="line-icon" data-icon="calendar"></span><h2>Yaklaşan Etkinlikler</h2></div><div id="event-list"></div></section>
+      <section class="feature-card science-card" id="icerikler"><div class="card-heading"><span class="line-icon" data-icon="book"></span><h2>Bilimsel İçerikler</h2></div><div class="science-copy"><ul><li>Seçili Makale Özetleri ve Klinik Yorumlar</li><li>Güncel Kılavuzlar ve Öneriler</li><li>Radyolojide Yapay Zekâ</li><li>Eğitim ve Öğrenme Stratejileri</li></ul><a class="text-link" href="#iletisim">Tüm İçerikleri Gör <span>⟶</span></a></div><div class="journal" aria-hidden="true"><i>Radiology</i><b>AJNR</b><em>RadioGraphics</em></div></section>
+      <section class="feature-card teachers-card" id="egitmenler"><div class="card-heading"><span class="line-icon" data-icon="users"></span><h2>Eğitmenlerimiz</h2></div><div class="teacher-list" id="teacher-list"></div></section>
+      <section class="feature-card certificate-card" id="hakkimizda"><div class="card-heading"><span class="line-icon" data-icon="award"></span><h2>Akreditasyon &amp; Sertifika</h2></div><p>Eğitimlerimizde katılım belgesi ve/veya<br>başarı sertifikası sunulmaktadır.</p><div class="certificate" aria-hidden="true"><small>Medcast Global</small><strong>Katılım Sertifikası</strong><span>✺</span></div></section>
+    </div>
+  </main>
+  <footer id="iletisim"><div class="section-shell footer-inner"><span>Medcast Global <small>· Academic Radiology Education</small></span><span>Bilgiyle gelişen bir radyoloji topluluğu.</span></div></footer>
+  <div class="alternative-site" id="alternative-site">
+    <header class="alt-header"><div class="alt-container alt-header-inner">
+      <a class="alt-brand" href="#alt-home"><span class="alt-brand-mark" aria-hidden="true">◎</span><span>MEDCAST<br>GLOBAL<small>ACADEMIC RADIOLOGY EDUCATION</small></span></a>
+      <button class="alt-menu-toggle" type="button" aria-expanded="false" aria-controls="alt-nav" aria-label="Menüyü aç">☰</button>
+      <nav class="alt-nav" id="alt-nav" aria-label="Alternatif ana menü"><a href="#alt-home">Ana Sayfa</a><a href="#alt-about">Hakkımızda</a><a href="#alt-articles">İçerikler</a><a href="#alt-webinars">Eğitimler</a><a href="#alt-faculty">Eğitmenler</a><a href="#alt-contact">İletişim</a><a class="alt-nav-cta" href="#alt-webinars">Eğitimleri Keşfet</a></nav>
+    </div></header>
+    <main id="alt-home">
+      <section class="alt-hero" id="alt-about"><div class="alt-hero-image" role="img" aria-label="Radyoloji görüntülerini inceleyen hekim"></div><div class="alt-hero-overlay"></div><div class="alt-container alt-hero-inner"><div class="alt-hero-copy"><span class="alt-kicker">MEDCAST GLOBAL</span><h1 class="hero-title">Bilgiyle güçlenin.<br><span>Görüntüyü anlayın.</span><br>Daha iyi karar verin.</h1><p>Radyoloji eğitimleri, bilimsel içerikler ve klinik pratiğe odaklanan bir öğrenme platformu.</p><div class="alt-hero-actions"><a class="alt-button" href="#alt-articles">İçerikleri Keşfet <span>↗</span></a><a class="alt-button alt-button-light" href="#alt-webinars">▣ &nbsp; Eğitimleri İncele</a></div><div class="alt-highlights" id="alt-highlights"></div></div></div></section>
+      <section class="alt-section alt-container" id="alt-articles"><div class="alt-section-heading"><div><span class="alt-kicker">GÜNCEL BİLGİ, KLİNİK BAKIŞ</span><h2>Radyoloji Dünyasından</h2></div><a href="#alt-webinars">Eğitimleri keşfet <span>→</span></a></div><div class="alt-card-grid" id="alt-article-list"></div></section>
+      <section class="alt-section alt-container" id="alt-webinars"><div class="alt-section-heading"><div><span class="alt-kicker">BİRLİKTE ÖĞRENELİM</span><h2>Online Eğitimlerimiz</h2></div><a href="#alt-faculty">Eğitmenleri gör <span>→</span></a></div><div class="alt-card-grid" id="alt-course-list"></div><p class="alt-note">Eğitim tarihleri tasarım örneğinden alınmıştır.</p></section>
+      <section class="alt-section alt-container alt-faculty" id="alt-faculty"><div class="alt-section-heading"><div><span class="alt-kicker">DENEYİMİNİ PAYLAŞAN UZMANLAR</span><h2>Eğitmenlerimiz</h2></div><a href="#alt-contact">İletişime geç <span>→</span></a></div><div class="alt-faculty-grid" id="alt-faculty-list"></div></section>
+    </main>
+    <footer class="alt-footer" id="alt-contact"><div class="alt-container"><strong>MEDCAST GLOBAL</strong><span>Bilgiyle gelişen bir radyoloji topluluğu.</span></div></footer>
+  </div>
+  <!-- Geçici tasarım karşılaştırma kontrolü -->
+  <div class="version-switcher" role="group" aria-label="Tasarım sürümü seçimi">
+    <button type="button" class="version-arrow" data-version-direction="-1" aria-label="Önceki sürüm">←</button>
+    <div class="version-label"><small>TASARIM</small><strong aria-live="polite" id="version-label">Versiyon 3 / 3</strong></div>
+    <button type="button" class="version-arrow" data-version-direction="1" aria-label="Sonraki sürüm">→</button>
+  </div>
+  <dialog class="search-dialog"><form method="dialog"><button class="close-search" aria-label="Kapat">×</button><label for="site-search">Ne aramıştınız?</label><div class="search-input-wrap"><input id="site-search" type="search" placeholder="Eğitim veya konu ara..." autocomplete="off"><button type="submit" aria-label="Ara">→</button></div><p class="search-hint">Eğitim başlıklarında arama yapın.</p><div class="search-results"></div></form></dialog>
+  <script src="data.js"></script><script src="app.js"></script><script src="alternative.js"></script>
+</body>
+</html>
