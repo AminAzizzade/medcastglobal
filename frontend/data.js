@@ -25,7 +25,7 @@ const siteData = {
     { category: 'ÖĞRENME', title: 'Vaka Temelli Öğrenme', description: 'Klinik düşünmeyi geliştiren vaka odaklı içerikler.', image: 'assets/article-cases.jpg' }
   ],
   teachers: [
-    { initials: 'KK', name: 'Prof. Dr. Kamil Karaali', description: 'Akdeniz Üniversitesi\nRadyoloji Anabilim Dalı' },
+    { initials: 'KK', name: 'Prof. Dr. Kamil Karaali', description: 'Uzmanlık Alanı\nRadyoloji ve Radyodiagnostik' },
     { initials: 'GÇ', name: 'Uzm. Dr. Günay Çiftçi', description: 'Kurucu & CEO\nMedcast Global' }
   ]
 };
