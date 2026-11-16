@@ -9,6 +9,9 @@ medcastglobal/
 │   ├── data.js         # Eğitimler, içerikler ve eğitmenler
 │   ├── app.js          # Ana sayfa etkileşimleri
 │   ├── alternative.js  # Üçüncü sürümün bileşenleri
+│   ├── about.html      # Bağımsız Hakkımızda sayfası
+│   ├── about-content.js # Hakkımızda metinleri ve görsel yolları
+│   ├── shared-shell.js # Ortak menü ve alt bilgi
 │   ├── styles.css      # İlk iki sürümün yerleşimi
 │   ├── theme.css       # İlk iki sürümün renk paletleri
 │   ├── alternative.css # Üçüncü sürümün tasarımı
@@ -24,6 +27,8 @@ medcastglobal/
 ## İçerik ve tasarım
 
 Eğitimleri, içerik kartlarını, eğitmenleri ve kart görsellerini `frontend/data.js` dosyasından düzenleyebilirsiniz. Ana sayfanın renkleri `frontend/alternative.css` dosyasının başındadır.
+
+Hakkımızda sayfasının tüm metinleri, görsel yolları ve alternatif metinleri `frontend/about-content.js` dosyasındadır. Görsel yolu boşsa veya dosya bulunamazsa yer tutucu gösterilir.
 
 Tasarım referansındaki tarihler ve isimler örnek olarak korunmuştur. Giriş, üyelik ve içerik bağlantıları gerçek servislerle bağlanmaya hazır görsel yer tutuculardır.
 

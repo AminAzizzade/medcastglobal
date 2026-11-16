@@ -78,13 +78,14 @@
 .alt-card-image { height:165px; position:relative; background-color:var(--alt-navy); }
 .alt-article-image img, .alt-course-image img { display:block; width:100%; height:100%; object-fit:cover; }
 .alt-article-image, .alt-course-image { overflow:hidden; }
-.alt-article-image img, .alt-course-image img { transition:transform 450ms ease; }
+.alt-article-image img { transition:transform 800ms ease; }
+.alt-course-image img { transition:transform 450ms ease; }
 @media (hover:hover) {
   #alt-article-list .alt-editorial:hover .alt-article-image img,
   #alt-course-list .alt-course:hover .alt-course-image img { transform:scale(1.035); }
 }
 .alt-article-image { overflow:hidden; aspect-ratio:16/9; height:auto; }
-#alt-article-list .alt-editorial { position:relative; display:flex; flex-direction:column; overflow:visible; border:0; border-radius:0; border-bottom:1px solid #c6d4df; background:transparent; box-shadow:none; transition:box-shadow 220ms ease; }
+#alt-article-list .alt-editorial { position:relative; display:flex; flex-direction:column; overflow:visible; border:0; border-radius:0; background:transparent; box-shadow:none; }
 #alt-article-list .alt-card-body { padding:18px 0 24px; }
 .alt-article-category { display:block; margin-bottom:10px; color:var(--alt-blue); font:700 10px/1.3 var(--sans); letter-spacing:1px; }
 #alt-article-list .alt-card-body h3 { min-height:0; margin-bottom:10px; }
@@ -98,13 +99,11 @@
 .alt-date { position:absolute; top:12px; left:12px; min-width:48px; padding:6px; border-top:3px solid var(--alt-blue); background:#fff; color:var(--alt-blue); border-radius:4px; box-shadow:0 2px 6px rgba(16,43,74,.22); text-align:center; text-transform:uppercase; font:700 9px var(--sans); }
 .alt-date strong { display:block; color:var(--alt-navy); font-size:18px; }
 .alt-webinars { padding:48px 0 0; }
-.alt-course { position:relative; display:flex; flex-direction:column; background:var(--alt-surface); border:1px solid var(--alt-border); border-radius:6px; box-shadow:0 5px 18px rgba(16,43,74,.09); transition:border-color 220ms ease,box-shadow 220ms ease; }
+.alt-course { position:relative; display:flex; flex-direction:column; background:var(--alt-surface); border:0; border-radius:6px; box-shadow:0 5px 18px rgba(16,43,74,.09); transition:box-shadow 220ms ease; }
 @media (hover:hover) {
-  #alt-article-list .alt-editorial:hover,
   #alt-course-list .alt-course:hover { box-shadow:0 12px 32px rgba(16,43,74,.26); }
 }
-@media (hover:hover) { a.alt-course:hover, .alt-course:has(a:hover) { border-color:var(--alt-blue); } }
-a.alt-course:focus-visible, .alt-course:focus-within { border-color:var(--alt-blue); }
+a.alt-course:focus-visible, .alt-course:focus-within { outline:2px solid var(--alt-blue); outline-offset:2px; }
 .alt-course-image .alt-date { z-index:1; }
 .alt-course .alt-date { min-width:42px; padding:4px 5px; font-size:9px; }
 .alt-course .alt-date strong { font-size:17px; }
@@ -112,7 +111,7 @@ a.alt-course:focus-visible, .alt-course:focus-within { border-color:var(--alt-bl
 .alt-course .alt-card-body h3 { min-height:2.7em; color:var(--alt-navy); font-size:clamp(12px,1vw,15px); }
 .alt-course .alt-card-body p { min-height:0; margin-bottom:18px; color:var(--alt-text); }
 .alt-course-number { white-space:nowrap; }
-.alt-course-status { display:block; width:100%; min-height:38px; margin-top:auto; padding:10px; border:0; border-radius:3px; background:var(--alt-navy); color:#e1eaf2; text-align:center; font:700 11px/1.4 var(--sans); cursor:not-allowed; }
+.alt-course-status { display:block; width:100%; min-height:38px; margin-top:auto; padding:10px; border:0; border-radius:3px; background:var(--alt-navy); color:#e1eaf2; text-align:center; font:700 11px/1.4 var(--sans); }
 /* Ortak satırlar, farklı uzunluktaki başlıkların altındaki tarihleri hizalar. */
 @supports (grid-template-rows:subgrid) {
   @media (min-width:1001px) {
