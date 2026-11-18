@@ -1,4 +1,4 @@
-.reading-page { padding-top:32px; padding-bottom:80px; }
+.reading-page { width:min(100% - 64px,1150px); margin-inline:auto; padding-top:32px; padding-bottom:80px; }
 .reading-intro h1,.reading-feature h2,.reading-library h2 { color:var(--alt-navy); font-family:var(--serif); font-weight:400; }
 .reading-intro h1 { margin:0 0 22px; font-size:clamp(34px,3.5vw,48px); line-height:1.1; }
 .reading-feature { display:grid; grid-template-columns:minmax(0,58fr) minmax(0,42fr); align-items:center; gap:clamp(24px,4vw,56px); min-height:340px; }
@@ -28,5 +28,30 @@
 .reading-card h3 { margin:10px 0 0; color:var(--alt-navy); font:16px/1.25 var(--serif); }
 .reading-card p,.reading-card time { margin:0; color:var(--alt-text); font:13px/1.5 var(--sans); }
 @media(max-width:900px) { .reading-list { grid-template-columns:repeat(4,minmax(0,1fr)); } }
-@media(max-width:700px) { .reading-page { padding-top:28px; padding-bottom:55px; } .reading-feature { grid-template-columns:1fr; gap:20px; min-height:0; } .reading-feature-image { height:auto; aspect-ratio:16/9; } .reading-feature-copy { min-height:205px; } .reading-list { grid-template-columns:repeat(2,minmax(0,1fr)); } .reading-filters { gap:2px 18px; } .reading-card h3 { font-size:16px; } }
+@media(max-width:700px) { .reading-page { width:calc(100% - 36px); padding-top:28px; padding-bottom:55px; } .reading-feature { grid-template-columns:1fr; gap:20px; min-height:0; } .reading-feature-image { height:auto; aspect-ratio:16/9; } .reading-feature-copy { min-height:205px; } .reading-list { grid-template-columns:repeat(2,minmax(0,1fr)); } .reading-filters { gap:2px 18px; } .reading-card h3 { font-size:16px; } }
 @media(prefers-reduced-motion:reduce) { .reading-feature-image img,.reading-feature-image img.is-exiting { transition:none; transform:none; } }
+
+/* İçerik arşivi */
+.reading-library { margin-top:72px; }
+.reading-library-layout { display:grid; grid-template-columns:minmax(0,1fr) minmax(250px,320px); gap:clamp(28px,3vw,42px); align-items:start; }
+.reading-results { min-width:0; }
+.reading-results-heading { grid-column:1 / -1; margin-bottom:28px; }
+.reading-results-heading h2 { margin:8px 0 0; font-size:clamp(27px,2.5vw,34px); }
+.reading-list { display:flex; flex-direction:column; gap:0; overflow:visible; }
+.reading-card { display:grid; grid-template-columns:minmax(0,52fr) minmax(0,48fr); gap:clamp(20px,2vw,30px); align-items:start; padding:28px 0; border-bottom:1px solid #dfe7ec; }
+.reading-card:first-child { padding-top:0; }
+.reading-card-image { display:block; overflow:hidden; background:#10233c; }
+.reading-card img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; }
+.reading-card h3 { margin:12px 0; color:var(--alt-navy); font:clamp(21px,2vw,27px)/1.2 var(--serif); }
+.reading-card h3 a { color:inherit; }
+.reading-card p { margin:0; color:var(--alt-text); font:14px/1.7 var(--sans); }
+.reading-card a:focus-visible,.reading-search :is(input,select,button):focus-visible { outline:2px solid var(--alt-blue); outline-offset:3px; }
+.reading-search { position:sticky; top:88px; padding-left:clamp(24px,3vw,42px); border-left:1px solid #dfe7ec; }
+.reading-search h2 { margin:0; color:var(--alt-navy); font:26px/1.2 var(--serif); }
+.reading-search p { margin:10px 0 24px; color:var(--alt-text); font:13px/1.6 var(--sans); }
+.reading-search label { display:block; margin:18px 0 8px; color:var(--alt-navy); font:700 12px var(--sans); }
+.reading-search input,.reading-search select { display:block; width:100%; min-height:46px; padding:10px 12px; border:1px solid #cbd9e4; border-radius:4px; background:#fff; color:var(--alt-navy); font:14px var(--sans); }
+.reading-search button { margin-top:20px; padding:0; border:0; background:none; color:var(--alt-blue); font:700 13px var(--sans); cursor:pointer; }
+#reading-empty { color:var(--alt-text); font:14px/1.6 var(--sans); }
+@media(max-width:800px) { .reading-library-layout { grid-template-columns:1fr; gap:32px; } .reading-results-heading { grid-row:1; margin-bottom:0; } .reading-search { position:static; grid-row:2; padding:0 0 26px; border-left:0; border-bottom:1px solid #dfe7ec; } .reading-library { margin-top:48px; } }
+@media(max-width:500px) { .reading-card { grid-template-columns:1fr; gap:16px; padding:24px 0; } .reading-card h3 { font-size:22px; } }

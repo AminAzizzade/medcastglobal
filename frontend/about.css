@@ -12,24 +12,28 @@
 .about-cover img { object-position:50% center; }
 .about-cover::after { content:''; position:absolute; z-index:1; inset:0 auto 0 0; width:25%; background:linear-gradient(90deg,var(--alt-background),transparent); pointer-events:none; }
 .about-story { background:#fff; }
-.about-split { width:min(100% - 64px,1100px); display:grid; grid-template-columns:260px minmax(0,1fr); gap:48px; align-items:start; padding-top:80px; }
+.about-split { width:min(100% - 64px,1150px); display:grid; grid-template-columns:minmax(0,360px) minmax(0,1fr); gap:clamp(64px,6vw,80px); align-items:center; padding-top:80px; }
 .about-story h2,.about-approach h2 { margin:0; color:var(--alt-navy); font:clamp(30px,3vw,40px)/1.1 var(--serif); }
 .about-founder-photo { width:100%; aspect-ratio:4/5; border-radius:6px; }
+.about-founder-identity { position:relative; isolation:isolate; }
+.about-founder-identity::before { content:''; position:absolute; z-index:-1; top:18px; right:-16px; bottom:8px; left:16px; background:#edf4f8; }
 .about-founder-photo img { object-position:center 30%; }
 .about-founder-photo-caption { display:block; margin-top:7px; color:var(--alt-text); font:11px/1.4 var(--sans); }
+.about-story[hidden],.about-story [hidden] { display:none; }
 .about-founder-details { margin-top:20px; padding-top:6px; border-top:2px solid var(--alt-blue); }
 .about-founder-name,.about-founder-role { display:block; font-family:var(--sans); }
 .about-founder-name { margin-top:16px; color:var(--alt-navy); font-size:16px; font-weight:700; line-height:1.4; }
 .about-founder-role { margin-top:5px; color:var(--alt-text); font-size:13px; line-height:1.5; }
-.about-prose { max-width:68ch; }
-.about-prose h2 { margin-bottom:20px; }
+.about-prose { max-width:52ch; }
+.about-prose h2 { margin-bottom:22px; }
+.about-prose .about-founder-role { margin:10px 0 22px; }
 .about-prose p,.about-columns p { margin:0; color:var(--alt-text); font:15px/1.8 var(--sans); white-space:pre-line; }
 .about-prose p:first-child { color:#263e56; font-size:16px; }
 .about-prose p + p { margin-top:20px; }
 .about-corporate { padding:80px 0 80px; background:#fff; }
 .about-corporate > .alt-container,
 .about-principles > .alt-container,
-.about-approach > .alt-container { width:min(100% - 64px,1100px); }
+.about-approach > .alt-container { width:min(100% - 64px,1150px); }
 .about-corporate-heading { display:flex; align-items:center; gap:30px; }
 .about-corporate-heading::after { content:''; height:1px; flex:1; background:#cddfea; }
 .about-section-label { display:block; margin-bottom:12px; color:var(--alt-blue); font:700 10px/1.4 var(--sans); letter-spacing:1.4px; text-transform:uppercase; }
@@ -76,7 +80,6 @@
 .about-courses-link:focus-visible { outline:3px solid var(--alt-blue); outline-offset:4px; }
 .about-approach-art { align-self:end; width:min(100%,380px); justify-self:center; transform:translateX(-90px); }
 .about-approach-art img { display:block; width:100%; max-height:370px; object-fit:contain; object-position:center bottom; }
-body[data-page="about"] .alt-newsletter { display:none; }
 body[data-page="about"] .alt-footer { border-top:1px solid #dfe7ec; }
 @media(max-width:900px) {
   .about-intro { height:auto; }
@@ -120,3 +123,84 @@ body[data-page="about"] .alt-footer { border-top:1px solid #dfe7ec; }
   .about-courses-link span:last-child { transition:none; }
   .about-courses-link:hover span:last-child { transform:none; }
 }
+
+/* İlk iki ve son iki ilke görsel ve metin yönünü paylaşır. */
+@media(min-width:801px) {
+  .about-principles-list li,.about-principles-list li:nth-child(n+2) { grid-template-columns:minmax(0,340px) minmax(0,1fr); grid-template-areas:'photo heading' 'photo description'; padding:32px 0; }
+  .about-principles-list li:nth-child(n+3) { grid-template-columns:minmax(0,1fr) minmax(0,340px); grid-template-areas:'heading photo' 'description photo'; }
+  .about-principles-list li:nth-child(n+2) .about-principle-image { height:auto; aspect-ratio:4/3; }
+}
+@media(max-width:800px) {
+  .about-principles-list li,.about-principles-list li:nth-child(n+2) { display:grid; grid-template-columns:minmax(0,1fr); grid-template-areas:'photo' 'heading' 'description'; row-gap:16px; padding:24px 0; }
+  .about-principles-list li:nth-child(n+2) .about-principle-image { height:auto; aspect-ratio:4/3; }
+  .about-principles-list h3 { margin-bottom:0; }
+}
+.about-principle-number { color:#86abd0; font-size:25px; }
+
+/* Klinik eğitim ilkeleri: iki sütunlu editoryal düzen. */
+.about-principles-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:48px; row-gap:60px; border-top:0; }
+.about-principles-list li,.about-principles-list li:nth-child(n+2),.about-principles-list li:nth-child(n+3) { display:flex; flex-direction:column; min-width:0; padding:0 0 28px; border-bottom:1px solid #cddfea; transition:none; }
+.about-principles-list .about-principle-image,.about-principles-list li:nth-child(n+2) .about-principle-image { order:0; width:100%; height:auto; aspect-ratio:16/9; align-self:auto; }
+.about-principle-heading { order:1; align-self:auto; margin-top:20px; }
+.about-principles-list li > p { order:2; max-width:none; font:17px/1.7 var(--sans); }
+.about-principles-list h3 { margin:0 0 12px; font-size:clamp(26px,2.2vw,30px); }
+.about-principle-number { margin-bottom:4px; font-size:20px; }
+@media(max-width:700px) {
+  .about-principles-list { grid-template-columns:1fr; row-gap:40px; }
+  .about-principles-list li > p { font-size:16px; }
+}
+
+/* Misyon, vizyon ve harita tek bir panelde. */
+.about-corporate-heading::after { content:none; }
+.about-corporate-panel { display:grid; grid-template-columns:minmax(0,55fr) minmax(0,45fr); gap:clamp(32px,4vw,56px); align-items:center; margin-top:32px; padding:clamp(48px,5vw,64px); background:#f0f6f9; }
+.about-corporate-panel .about-corporate-columns { display:block; margin:0; }
+.about-corporate-panel .about-corporate-columns article { display:block; padding:0; border:0; }
+.about-corporate-panel .about-corporate-columns article + article { margin-top:30px; padding-top:30px; border-top:1px solid #cddfea; }
+.about-corporate-panel h3 { font-size:clamp(26px,2.4vw,32px); }
+.about-corporate-map { min-width:0; }
+.about-corporate-map .about-positioning-map { aspect-ratio:65/42; }
+.about-corporate-map .about-map-image img { object-fit:contain; -webkit-mask-image:none; mask-image:none; }
+.about-corporate-map .about-section-label { margin:24px 0 8px; }
+.about-corporate .about-map-caption { max-width:19ch; color:var(--alt-navy); font:clamp(24px,2vw,27px)/1.25 var(--serif); }
+@media(max-width:800px) {
+  .about-corporate-panel { grid-template-columns:1fr; gap:32px; padding:28px; }
+}
+
+/* Misyon ve vizyon, sayfanın beyaz zemininde iki okuma sütunu. */
+.about-corporate-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:48px; margin-top:36px; }
+.about-corporate-columns article,.about-corporate-columns article:first-child,.about-corporate-columns article + article { display:block; padding:20px 0 0; border:0; border-top:2px solid var(--alt-blue); }
+.about-corporate-columns h3 { font-size:clamp(26px,2.4vw,32px); }
+@media(max-width:700px) { .about-corporate-columns { grid-template-columns:1fr; gap:32px; } }
+
+/* Kurumsal ilkeler: fotoğraf üzerine oturan iki sütunlu beyaz alan. */
+.about-corporate-cover { width:100%; height:clamp(300px,35vw,480px); margin-top:32px; }
+.about-corporate-cover img { object-position:center 42%; }
+.about-corporate-columns { position:relative; z-index:1; width:calc(100% - 80px); margin:-72px auto 0; padding:40px 48px; gap:0; background:#fff; border-top:2px solid var(--alt-blue); }
+.about-corporate-columns article,.about-corporate-columns article:first-child,.about-corporate-columns article + article { padding:0; border:0; }
+.about-corporate-columns article:first-child { padding-right:clamp(24px,4vw,50px); }
+.about-corporate-columns article + article { padding-left:clamp(24px,4vw,50px); border-left:1px solid #cddfea; }
+.about-corporate-columns h3 { font-size:clamp(26px,2.5vw,36px); }
+.about-corporate-columns p { font-size:16px; }
+@media(max-width:700px) {
+  .about-corporate-cover { height:auto; aspect-ratio:16/10; margin-top:24px; }
+  .about-corporate-columns { width:calc(100% - 32px); margin-top:-36px; padding:28px 24px; gap:28px; }
+  .about-corporate-columns article:first-child { padding-right:0; }
+  .about-corporate-columns article + article { padding:28px 0 0; border-left:0; border-top:1px solid #cddfea; }
+}
+
+/* Bölüm başlıkları ve alt başlıklar sayfa genelinde aynı ölçüyü kullanır. */
+body[data-page="about"] { --about-heading-size:clamp(30px,3.2vw,42px); --about-subheading-size:clamp(26px,2.2vw,30px); }
+.about-principles .about-section-title,.about-corporate .about-section-title { font-size:var(--about-heading-size); }
+.about-principles-list h3,.about-corporate-columns h3 { font-size:var(--about-subheading-size); line-height:1.2; }
+body[data-page="about"] { --about-corner-radius:6px; }
+.about-principle-image,.about-corporate-cover,.about-corporate-columns { border-radius:var(--about-corner-radius); }
+.about-corporate-columns { border-top:0; }
+.about-principles-list .about-principle-number { display:none; }
+.about-principles-list li,.about-principles-list li:nth-child(n+2),.about-principles-list li:nth-child(n+3) { border-bottom:0; }
+
+.about-closing { padding:60px 0; background:#f5f8fa; }
+.about-closing-inner { width:min(100% - 64px,1150px); }
+.about-closing h2 { margin:0 0 14px; color:var(--alt-navy); font:clamp(30px,3vw,40px)/1.15 var(--serif); }
+.about-closing p { margin:0 0 24px; color:var(--alt-text); font:15px/1.7 var(--sans); }
+.about-closing a:focus-visible { outline:3px solid var(--alt-blue); outline-offset:4px; }
+@media(max-width:700px) { .about-closing { padding:44px 0; } .about-closing-inner { width:calc(100% - 36px); } }

@@ -9,7 +9,7 @@ detailBack.textContent = detailType === 'egitim' ? '← Eğitimlere dön' : '←
 if (detailItem) {
   document.title = `${detailItem.title} | Medcast Global`;
   document.querySelector('#detail-title').textContent = detailItem.title;
-  document.querySelector('#detail-category').textContent = detailType === 'egitim' ? 'CANLI WEBİNAR' : detailItem.category;
+  document.querySelector('#detail-category').textContent = detailType === 'egitim' ? (detailItem.recordingAvailable ? 'EĞİTİM KAYDI' : 'TAMAMLANAN EĞİTİM') : detailItem.category;
   document.querySelector('#detail-description').textContent = detailType === 'egitim' ? `${detailItem.date} · ${detailItem.duration}` : detailItem.description;
   document.querySelector('#detail-image').src = detailItem.image;
   document.querySelector('#detail-image').alt = detailItem.alt || '';

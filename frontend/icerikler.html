@@ -12,7 +12,12 @@
   <main class="alt-container reading-page">
     <header class="reading-intro"><h1>Radyoloji Dünyasından</h1></header>
     <section class="reading-feature" aria-label="Öne çıkan içerikler"><div class="reading-feature-image"><img class="is-active" alt=""><img alt=""></div><div class="reading-feature-copy"><div id="featured-copy"><span class="alt-kicker" id="featured-category"></span><h2 id="featured-title"></h2><p id="featured-description"></p><p class="reading-placeholder">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus.</p><a id="featured-link" href="detay.html?tur=yayin&amp;id=featured">Vakayı incele →</a></div></div></section>
-    <section class="reading-library" id="yayinlar" aria-label="İçerikler"><div id="reading-filters" hidden></div><div id="reading-list" class="reading-list"></div><p id="reading-empty" hidden>Bu kategoride henüz içerik bulunmuyor.</p></section>
+    <section class="reading-library" id="yayinlar" aria-label="İçerikler">
+      <div class="reading-library-layout">
+        <div class="reading-results-heading"><span class="alt-kicker">MEDCAST GLOBAL</span><h2>İçerikleri keşfedin</h2></div><div class="reading-results"><div id="reading-list" class="reading-list"></div><p id="reading-empty" role="status" hidden>Aramanızla eşleşen içerik bulunamadı.</p></div>
+        <aside class="reading-search" aria-labelledby="search-title"><h2 id="search-title">İçeriklerde ara</h2><p>İlginizi çeken konuları keşfedin.</p><label for="reading-query">Anahtar kelime</label><input id="reading-query" type="search" placeholder="Başlık veya konu ara" autocomplete="off"><label for="reading-category">Konu seçin</label><select id="reading-category"></select><button id="reading-reset" type="button">Filtreleri temizle <span aria-hidden="true">→</span></button></aside>
+      </div>
+    </section>
   </main>
   <div data-shared-footer></div>
 </div><script src="shared-shell.js"></script><script src="data.js"></script><script src="icerikler.js"></script></body></html>

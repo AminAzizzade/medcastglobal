@@ -2,18 +2,24 @@
 function aboutValue(path) {
   return path.split('.').reduce((value, key) => value?.[key], aboutContent);
 }
+// Yerel önizlemede taslaklar görünür; yayında doldurulmamış alanlar gizlenir.
+const aboutDraft = location.protocol === 'file:' || ['localhost', '127.0.0.1', '::1'].includes(location.hostname);
+const isPlaceholder = value => typeof value !== 'string' || !value.trim() || /^\s*\[.*\]\s*$/.test(value);
 document.querySelectorAll('[data-about-text]').forEach(element => {
-  element.textContent = aboutValue(element.dataset.aboutText) ?? '';
+  const value = aboutValue(element.dataset.aboutText);
+  element.textContent = value ?? '';
+  if (!aboutDraft && isPlaceholder(value)) element.hidden = true;
 });
+if (!aboutDraft && isPlaceholder(aboutContent.founder.name)) document.querySelector('.about-story').hidden = true;
 function renderAboutImage(element, image) {
   if (image?.src) {
     const img = document.createElement('img');
     img.alt = image.alt || '';
-    img.addEventListener('error', () => { element.textContent = image.placeholder ?? ''; }, { once: true });
+    img.addEventListener('error', () => { element.textContent = aboutDraft ? (image.placeholder ?? '') : ''; }, { once: true });
     img.src = image.src;
     element.replaceChildren(img);
   } else {
-    element.textContent = image?.placeholder ?? '';
+    element.textContent = aboutDraft ? (image?.placeholder ?? '') : '';
   }
 }
 document.querySelectorAll('[data-about-image]').forEach(element => {
@@ -52,7 +58,7 @@ if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: re
       }
     });
   }, { threshold: 0.05 });
-  document.querySelectorAll('.about-reveal, .about-principle').forEach(section => {
+  document.querySelectorAll('.about-reveal').forEach(section => {
     section.classList.add('is-pending');
     observer.observe(section);
   });

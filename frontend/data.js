@@ -8,11 +8,11 @@ const siteData = {
     { icon: 'users', title: 'Uzman Eğitmenler', description: 'Uluslararası deneyim ve akademik yetkinlik' }
   ],
   courses: [
-    { title: 'Temel Nöroradyoloji İlkeleri – 1', date: '26 Nisan 2026', duration: '2,5 saat', image: 'assets/Temel Nöroradyoloji İlkeleri–1.jpeg' },
-    { title: 'Temel Nöroradyoloji İlkeleri – 2', date: '5 Mayıs 2026', duration: '2,5 saat', image: 'assets/Temel Nöroradyoloji İlkeleri–2.jpeg' },
-    { title: 'Sıfırdan Spinal MRG', date: '6 Haziran 2026', duration: '3 saat', image: 'assets/Sıfırdan Spinal MRG.jpeg' },
-    { title: 'MR Anjiyografi & SVST', date: '25 Haziran 2026', duration: '2,5 saat', image: 'assets/MR Anjiyografi & SVST.jpeg' },
-    { title: 'Demiyelinizan Hastalıklarda MRG', date: '2 Eylül 2026', duration: '2,5 – 3 saat', image: 'assets/Demiyelinizan Hastalıklarda MRG.jpeg' }
+    { title: 'Temel Nöroradyoloji İlkeleri – 1', date: '26 Nisan 2026', duration: '2,5 saat', summary: 'Temel nöroradyoloji ilkelerine giriş.', image: 'assets/Temel Nöroradyoloji İlkeleri–1.jpeg' },
+    { title: 'Temel Nöroradyoloji İlkeleri – 2', date: '5 Mayıs 2026', duration: '2,5 saat', summary: 'Temel nöroradyoloji ilkelerine devam.', image: 'assets/Temel Nöroradyoloji İlkeleri–2.jpeg' },
+    { title: 'Sıfırdan Spinal MRG', date: '6 Haziran 2026', duration: '3 saat', summary: 'Spinal MRG değerlendirmesine giriş.', image: 'assets/Sıfırdan Spinal MRG.jpeg' },
+    { title: 'MR Anjiyografi & SVST', date: '25 Haziran 2026', duration: '2,5 saat', summary: 'MR anjiyografi ve SVST üzerine eğitim.', image: 'assets/MR Anjiyografi & SVST.jpeg' },
+    { title: 'Demiyelinizan Hastalıklarda MRG', date: '2 Eylül 2026', duration: '2,5 – 3 saat', summary: 'Demiyelinizan hastalıklarda MRG üzerine eğitim.', image: 'assets/Demiyelinizan Hastalıklarda MRG.jpeg' }
   ],
   events: [
     { title: 'MSK Radyoloji Serisi (4 Ders)', date: 'Aralık 2026', format: 'Online, Canlı' },
